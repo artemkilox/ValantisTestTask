@@ -1,0 +1,145 @@
+@font-face {
+  font-family: "Montserrat Regular";
+  src: url("../../resources/fonts/Montserrat-Regular.ttf") format("truetype");
+  font-style: auto;
+  font-weight: 300;
+}
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat Regular";
+}
+.content-wrapper{
+  display: flex;
+  justify-content: space-between;
+  //background: red;
+  .table-wrapper{
+    width: 70%;
+    padding: 2em 1em 0 3em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .loader-wrapper{
+      position: absolute;
+      background: rgba(255, 255, 255, 0.6);
+      top: 0;
+      left: 0;
+      width: 70%;
+      height: 90%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .loader{
+        width: 100px;
+        height: 100px;
+        border: 5px solid #FFF;
+        border-bottom-color: #FF3D00;
+        border-radius: 50%;
+        display: inline-block;
+        box-sizing: border-box;
+        animation: rotation 1s linear infinite;
+      }
+
+      @keyframes rotation {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    }
+
+    .table{
+      overflow: auto;
+      height: 85vh;
+      .table-line{
+        padding: 15px;
+        align-items: center;
+        display: grid;
+        grid-template-columns: 3fr 3fr 1fr 1fr;
+        .table-cell{
+
+        }
+        &:nth-child(odd){
+          background: rgba(0, 0, 255, 0.2);
+        }
+      }
+    }
+    .btns{
+      width: 50%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 30px;
+      .btn{
+        cursor: pointer;
+        background: blue;
+        color: white;
+        padding: 10px;
+        border-radius: 10px;
+      }
+      .cur{
+        font-size: 1.2em;
+      }
+      .disabled{
+        cursor: auto;
+        background: rgba(0, 0, 255, 0.50);
+      }
+    }
+  }
+
+  .filters-wrapper{
+    width: 25%;
+    margin-right: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .checkbox{
+      display: none;
+    }
+
+    .filters-container{
+
+      .disabled{
+        opacity: .5;
+      }
+
+      .filter-wrapper{
+        background: #3939b9;
+        padding: 20px;
+        border-radius: 20px;
+        margin-top: 30px;
+        .filter-title{
+          color: #FFFFFF;
+        }
+        .danger-message{
+          color: #FF3D00;
+        }
+        .filter-input{
+          margin-top: 10px;
+          width: 80%;
+          padding: 5px;
+        }
+      }
+    }
+    .buttons-wrapper{
+      margin-bottom: 30px;
+      display: flex;
+
+      .filter-button{
+        margin-right: 20px;
+        cursor: pointer;
+        background: blue;
+        color: white;
+        padding: 10px;
+        border-radius: 10px;
+      }
+    }
+  }
+}
